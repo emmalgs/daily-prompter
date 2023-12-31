@@ -61,6 +61,14 @@ main {
   font-weight: 700;
 }
 
+.countdown {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Neontubes";
+  color: var(--neon-text-color);
+  text-shadow: var(--neon-text-shadow);
+}
+
 footer {
   display: flex;
   position: fixed;
