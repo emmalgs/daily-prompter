@@ -61,7 +61,21 @@ main {
   font-weight: 700;
 }
 
+
 .countdown {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1fr 2fr;
+  width: 270px;
+  padding: 2rem;
+  padding-right: 3rem;
+  border-radius: 10px;
+  background-color: var(--black);
+}
+.countdown span {
+  grid-column: span 1;
+  width: 20%;
+  margin: auto;
+  text-align: center;
   font-size: 2rem;
   font-weight: 700;
   font-family: "Neontubes";
