@@ -27,11 +27,12 @@ const Timer = () => {
 
   return (
     <div className="timer">
-      <p>Time until next prompt:</p>
       <p className="countdown">
-        {hours.toString().padStart(2, "0")}:
-        {minutes.toString().padStart(2, "0")}:
-        {seconds.toString().padStart(2, "0")}
+        <span>{hours.toString().padStart(2, "0")}</span>
+        <span> : </span>
+        <span>{minutes.toString().padStart(2, "0")}</span>
+        <span> : </span>
+        <span>{seconds.toString().padStart(2, "0")}</span>
       </p>
     </div>
   );
