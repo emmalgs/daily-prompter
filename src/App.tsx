@@ -1,3 +1,5 @@
+import Timer from "./Timer";
+
 const App: React.FC = () => {
   return (
     <div className="App">
@@ -7,10 +9,7 @@ const App: React.FC = () => {
           <div className="prompt-title">Today's Prompt: </div>
           <p className="prompt-body">Write a story about a person who is in a coma.</p>
         </div>
-        <div className="timer">
-          <p>Time until next prompt:</p>
-          <p>00:00:00</p>
-        </div>
+        <Timer />
       </main>
       <footer>&copy; 2023 Emma Gerigscott - Ladies IT Department</footer>
     </div>
