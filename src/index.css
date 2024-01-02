@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Open+Sans:wght@300;400;700&family=Pirata+One&family=Shrikhand&display=swap');
 @font-face {
   font-family: "Neontubes";
   src: url(../src/assets/fonts/NeonTubes2.otf) format("opentype");
 }
+
 
 :root {
   --mustard: #D9B700;
@@ -22,45 +24,60 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #FFFFE950;
+  background-color: var(--mint-green);
+  font-family: "Open Sans", sans-serif;
 }
 
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 80px;
-}
-
-.pink-circle {
-  position: absolute;
+.blue-circle {
+  position: fixed;
   z-index: -1;
-  width: 800px;
-  height: 600px;
-  background-color: var(--pink);
+  width: 900px;
+  height: 90vh;
+  background-color: var(--cobalt);
   border-radius: 50%;
-  margin: auto;
-  top: 0;
 }
 
 .prompt {
-  font-size: 1.5rem;
-  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
 }
 
-.prompt-title {
-  font-family: "Neontubes";
-  font-size: 2rem;
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+svg text {
+  font-size: 1.1rem;
+  font-family: 'Pirata One', sans-serif;
+  stroke-width: 2;
+  animation: animate-stroke 2s ease-in-out alternate 2;
+}
+
+svg text.prompt-body {
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--neon-text-color);
-  text-shadow: var(--neon-text-shadow);
+  fill: var(--pink);
+  stroke: var(--pink);
+  stroke-width: 0;
+}
+
+svg text.prompt-body:hover {
+
+  cursor: pointer;
 }
 
 .timer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-top: -40px;
   font-size: 1.5rem;
   font-weight: 700;
 }
-
 
 .countdown {
   display: grid;
@@ -68,9 +85,8 @@ main {
   width: 270px;
   padding: 2rem;
   padding-right: 3rem;
-  border-radius: 10px;
-  background-color: var(--black);
 }
+
 .countdown span {
   grid-column: span 1;
   width: 20%;
@@ -94,4 +110,27 @@ footer {
   height: 80px;
   background-color: var(--mint-green);
   color: var(--vermillion);
+}
+
+@keyframes animate-stroke {
+  0% {
+    fill: transparent;
+    stroke: var(--vermillion);
+    stroke-width: 3;
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 32%;
+  }
+  50% {
+    fill: transparent;
+    stroke: var(--vermillion);
+    stroke-width: 3;
+  }
+  80%,
+  100% {
+    fill: var(--vermillion);
+    stroke: transparent;
+    stroke-width: 0;
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 32% 0;
+  }
 }
