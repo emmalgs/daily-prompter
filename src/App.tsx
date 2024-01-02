@@ -5,10 +5,11 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <main>
+
         <Prompt />
         <Timer />
       </main>
-      <footer>&copy; 2023 Emma Gerigscott - Ladies IT Department</footer>
+      {/* <footer>&copy; 2023 Emma Gerigscott - Ladies IT Department</footer> */}
     </div>
   );
 };
