@@ -1,5 +1,6 @@
 import Timer from "./Timer";
 import Prompt from "./Prompt";
+import Background from "./Background";
 
 const App: React.FC = () => {
   return (
@@ -8,6 +9,7 @@ const App: React.FC = () => {
 
         <Prompt />
         <Timer />
+        <Background />
       </main>
       {/* <footer>&copy; 2023 Emma Gerigscott - Ladies IT Department</footer> */}
     </div>
