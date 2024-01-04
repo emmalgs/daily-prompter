@@ -25,15 +25,16 @@ body {
   padding: 0;
   background-color: var(--cobalt);
   background-image: url("./assets/images/grid.png");
+  background-size: 100px;
+  background-repeat: repeat;
+  background-position: center;
+
   font-family: "Open Sans", sans-serif;
 }
 
 .blue-circle {
   position: absolute;
   top: 10%;
-  z-index: -1;
-  width: 780px;
-  height: 75vh;
   background: var(--mustard);
   background-image: linear-gradient(90deg, rgb(231, 236, 234), rgba(0,0,0,0)), url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='9.22' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   border-radius: 20px;
@@ -41,11 +42,12 @@ body {
 }
 
 .prompt {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
+  width: 80%;
+  padding: 1rem;
+  margin: auto;
+  margin-top: 20%;
+  background-color: #ffffffa9;
+  border-radius: 10px;
   animation: ease-in-out 1s 1 zoomIn;
 }
 
@@ -58,7 +60,6 @@ body {
   text-align: center;
   width: 90%;
   margin: auto;
-  padding-top: 10%;
 }
 
 .timer {
@@ -109,6 +110,11 @@ svg {
   height: 100%;
 }
 
+#duck *,
+#fish * {
+  transform-box: fill-box;
+}
+
 [id^="star-"] {
   transform-origin: center;
   animation: 6s ease-in-out infinite alternate pulse;
@@ -126,6 +132,55 @@ svg {
 }
 #star-t-r {
   animation-delay: 4.8s;
+}
+
+[id^="fish-"]:nth-child(odd) {
+  transform-origin: center;
+  animation: 1.6s ease-in-out infinite alternate shakeX;
+  z-index: -1;
+}
+
+[id^="fish-"]:nth-child(even) {
+  transform-origin: center;
+  animation: 1s ease-in-out infinite alternate jello;
+  z-index: -1;
+}
+
+#fish-1 {
+  animation-delay: 1.2s;
+}
+#fish-2 {
+  animation-delay: 2.4s;
+}
+#fish-3 {
+  animation-delay: 3.6s;
+}
+#fish-4 {
+  animation-delay: 4.8s;
+}
+#fish-5 {
+  animation-delay: 6s;
+}
+#fish-6 {
+  animation-delay: 7.2s;
+}
+#fish-7 {
+  animation-delay: 8.4s;
+}
+#fish-8 {
+  animation-delay: 9.6s;
+}
+#fish-9 {
+  animation-delay: 10.8s;
+}
+#fish-10 {
+  animation-delay: 12s;
+}
+#fish-11 {
+  animation-delay: 13.2s;
+}
+#fish-12 {
+  animation-delay: 14.4s;
 }
 
 @keyframes pulse {
@@ -148,5 +203,63 @@ svg {
 
   50% {
     opacity: 1;
+  }
+}
+
+@keyframes shakeX {
+  from,
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+@keyframes jello {
+  from,
+  11.1%,
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+
+  22.2% {
+    transform: skewX(-12.5deg) skewY(-12.5deg);
+  }
+
+  33.3% {
+    transform: skewX(6.25deg) skewY(6.25deg);
+  }
+
+  44.4% {
+    transform: skewX(-3.125deg) skewY(-3.125deg);
+  }
+
+  55.5% {
+    transform: skewX(1.5625deg) skewY(1.5625deg);
+  }
+
+  66.6% {
+    transform: skewX(-0.78125deg) skewY(-0.78125deg);
+  }
+
+  77.7% {
+    transform: skewX(0.390625deg) skewY(0.390625deg);
+  }
+
+  88.8% {
+    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
   }
 }
