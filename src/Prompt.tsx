@@ -1,12 +1,13 @@
-import { createPrompt } from "./services/promptGenerator";
+import getLatestPrompt from "./services/promptAPI";
 import { useEffect, useState } from "react";
 
 const Prompt = () => {
   const [prompt, setPrompt] = useState("");
 
   const generatePrompt = async () => {
-    const prompt = await createPrompt();
-    setPrompt(prompt);
+    const text = await getLatestPrompt();
+    console.log(text)
+    setPrompt(text);
   };
 
   useEffect(() => {
