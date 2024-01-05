@@ -6,7 +6,6 @@ const Prompt = () => {
 
   const generatePrompt = async () => {
     const text = await getLatestPrompt();
-    console.log(text)
     setPrompt(text);
   };
 
